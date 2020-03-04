@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hollow Diamond</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+  </body>
+  <script>
+
+let layer = 13
+
+let CeilLayer = Math.ceil(layer/2)
+let FloorLayer = Math.floor(layer/2)
+
+console.log(" ".repeat(CeilLayer) + "*")
+
+
+  for(let i = 1; i < CeilLayer; i++) {
+		console.log(" ".repeat(CeilLayer - i) + "*" + " ".repeat(i*2 - 1) + "*")
+	  }
+
+  for(let i = (FloorLayer-1); i >= 1; i--) {
+		console.log(" ".repeat(FloorLayer - i + 1) + "*" + " ".repeat(i*2 - 1) + "*")
+	  } 
+
+console.log(" ".repeat(CeilLayer) + "*")
+
+  </script>
+</html>
