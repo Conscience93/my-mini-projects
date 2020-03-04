@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Task List</title>
+  </head>
+  <style>
+    body {
+      background-color: darkslateblue;
+      font-size: 24px;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 400px;
+    }
+
+  input {
+    background-color: navy;
+    color: pink;
+    padding: 10px;
+    align-items: center;
+    height: auto;
+    width: 300px;
+    font-size: inherit;
+    border: 0;
+  }
+
+  button {
+    background-color: brown;
+    color: purple;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 150px;
+    font-size: inherit;
+    border: 0;
+  }
+
+  #tasks {
+    display: flex;
+    flex-direction: column;
+    background-color: navy;
+    border: darkkhaki 1px;
+    color: pink;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    max-width: 50%;
+    margin: auto;
+    margin-top: -100px;
+    font-size: inherit;
+  }
+  
+  </style>
+  <body>
+    <form id="form"> <!-- form is used to capture whatever input-->
+      <input id="input" placeholder="Type something....">
+      <button id="button" type="submit" onclick="addTask()" disabled = true>Add Task</button>
+    </form>
+    <ul id="tasks">
+      <li id="reminder">Eat Sleep Code Repeat</li>
+    </ul>
+
+  </body>
+  <script>
+    const input = document.getElementById("input")
+    const btn = document.getElementById("button")
+    const list = document.getElementById("tasks")
+
+    //part 1
+    const addTask = () => {
+        event.preventDefault()
+        const newDiv = document.createElement("li")
+        newDiv.innerHTML = input.value
+        document.getElementById("tasks").appendChild(newDiv)
+        //part 4
+        input.value = ""
+    }
+
+    //part 2
+    tasks.onclick = function(event) {
+        event.target.parentNode.removeChild(event.target)
+    }
+
+    //part 3
+    input.addEventListener("input", () => {
+      if(input.value.length < 3) {
+        button.disabled = true
+      } else 
+        button.disabled = false
+    })
+
+
+  </script>
+</html>
